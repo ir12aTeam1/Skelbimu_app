@@ -16,7 +16,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="daW-qZ-w06" kind="relationship" relationship="viewControllers" id="Ro4-gv-8hw"/>
-                        <segue destination="vZ0-0Y-o96" kind="relationship" relationship="viewControllers" id="Iwd-fM-c3w"/>
+                        <segue destination="mXp-ff-1Pf" kind="relationship" relationship="viewControllers" id="m1C-Db-S7t"/>
                         <segue destination="6bu-Ko-Fci" kind="relationship" relationship="viewControllers" id="Gqp-SR-Tfq"/>
                     </connections>
                 </tabBarController>
@@ -24,24 +24,34 @@
             </objects>
             <point key="canvasLocation" x="130" y="137"/>
         </scene>
-        <!--View Controller - Ideti skelbima-->
-        <scene sceneID="St0-Cc-VQM">
+        <!--Table View Controller-->
+        <scene sceneID="pcV-JF-kyW">
             <objects>
-                <viewController id="vZ0-0Y-o96" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JEs-9L-oSo"/>
-                        <viewControllerLayoutGuide type="bottom" id="tsL-vg-LLz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bu-tb-LOS">
+                <tableViewController id="knG-xW-yQR" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aoi-HY-Njq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Ideti skelbima" id="deV-3k-njt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xJD-ew-UF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HTa-MW-d2c">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTa-MW-d2c" id="QHZ-8y-HtA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="knG-xW-yQR" id="5oR-4v-e1j"/>
+                            <outlet property="delegate" destination="knG-xW-yQR" id="icI-vW-Nhp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qzE-a6-dMj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaP-EY-8OH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="463"/>
+            <point key="canvasLocation" x="1190" y="472"/>
         </scene>
         <!--Table View Controller - Paskyra-->
         <scene sceneID="Dcr-Xf-0hn">
@@ -111,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="154"/>
+            <point key="canvasLocation" x="2213" y="154"/>
         </scene>
         <!--Navigation Controller - Skelbimai-->
         <scene sceneID="fqp-2U-NLS">
@@ -160,6 +170,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmQ-cV-opN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1187" y="-190"/>
+        </scene>
+        <!--Navigation Controller - Pridėti-->
+        <scene sceneID="wOq-Zj-F3I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXp-ff-1Pf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pridėti" id="BBe-Xj-58Z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kxp-x0-grD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="knG-xW-yQR" kind="relationship" relationship="rootViewController" id="fFi-uv-kl0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22N-2v-I2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="472"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
