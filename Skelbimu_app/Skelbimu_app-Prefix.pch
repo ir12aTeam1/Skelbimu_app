@@ -16,3 +16,4 @@
 #endif
 
 #import "AppConfig.h"
+#import "Client.h"

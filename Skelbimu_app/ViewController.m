@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "Client.h"
 
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;

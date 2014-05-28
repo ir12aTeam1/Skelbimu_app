@@ -7,7 +7,6 @@
 //
 
 #import "ProfileSettingsTableViewController.h"
-#import "Client.h"
 
 @interface ProfileSettingsTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;

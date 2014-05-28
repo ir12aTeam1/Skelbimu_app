@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tabBar setSelectedImageTintColor:UIColorFromRGB(kGREEN_COLOR)];
+    [self.tabBar setSelectedImageTintColor:UIColorFromRGB(kSAFE_GREEN_COLOR)];
 }
 
 @end
