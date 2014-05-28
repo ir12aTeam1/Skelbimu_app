@@ -10,6 +10,6 @@
 
 @interface BillBoardTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSString *selectedCategory;
+@property (nonatomic, strong) PFObject *selectedCategoryObject;
 
 @end

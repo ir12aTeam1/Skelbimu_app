@@ -7,11 +7,13 @@
 //
 
 #import "BillBoardTableViewController.h"
+#import "CategoryTableViewCell.h"
+#import "ItemTableViewCell.h"
 
 @interface BillBoardTableViewController () {
     BOOL isItem;
 }
-@property (nonatomic, strong) NSMutableArray *categoriesArray;
+@property (nonatomic, strong) NSMutableArray *pfObjectsArray;
 @end
 
 @implementation BillBoardTableViewController
@@ -28,16 +30,34 @@
 }
 
 - (void)getListOfCategories {
-    [self.categoriesArray removeAllObjects];
+    [self.pfObjectsArray removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
-    [query whereKey:@"parent_category" equalTo:self.selectedCategory ? self.selectedCategory : @""];
+    [query whereKey:@"parent_category" equalTo:self.selectedCategoryObject ? self.selectedCategoryObject.objectId : @""];
     [query orderByAscending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
             // Do something with the found objects
-            self.categoriesArray = [objects mutableCopy];
-            [self.tableView reloadData];
+            if (objects.count > 0) {
+                isItem = NO;
+                self.pfObjectsArray = [objects mutableCopy];
+                [self.tableView reloadData];
+            } else {
+                isItem = YES;
+                //Get items list
+                PFQuery *itemQuery = [PFQuery queryWithClassName:@"Item"];
+                [itemQuery whereKey:@"category" equalTo:self.selectedCategoryObject];
+                [itemQuery orderByAscending:@"createdAt"];
+                [itemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (!error) {
+                        self.pfObjectsArray = [objects mutableCopy];
+                        [self.tableView reloadData];
+                    } else {
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                }];
+            }
+            
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -55,19 +75,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.categoriesArray.count;
+    return self.pfObjectsArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (isItem) {
+        return 80;
+    } else {
+        return 44;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    static NSString *cellIdentifier_cat = @"Category";
+    static NSString *cellIdentifier_item = @"Item";
+    PFObject *category = [self.pfObjectsArray objectAtIndex:indexPath.row];
     
-    // Configure the cell...
-    PFObject *category = [self.categoriesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = category[@"title"];
-    cell.detailTextLabel.text = category.objectId;
-    return cell;
+    if (isItem) {
+        ItemTableViewCell *cell = (ItemTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier_item forIndexPath:indexPath];
+        cell.titleLabel.text = category[@"title"];
+        return cell;
+    } else {
+        CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier_cat forIndexPath:indexPath];
+        cell.titleLabel.text = category[@"title"];
+        return cell;
+    }
 }
 
 #pragma mark - TableView Delegate
@@ -78,11 +111,11 @@
 
 #pragma mark - Getter
 
-- (NSMutableArray *)categoriesArray {
-    if (!_categoriesArray) {
-        _categoriesArray = [[NSMutableArray alloc] init];
+- (NSMutableArray *)pfObjectsArray {
+    if (!_pfObjectsArray) {
+        _pfObjectsArray = [[NSMutableArray alloc] init];
     }
-    return _categoriesArray;
+    return _pfObjectsArray;
 }
 
 #pragma mark - Navigation
@@ -93,8 +126,7 @@
     if ([segue.identifier isEqualToString:@"drill_down"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BillBoardTableViewController *controller = [segue destinationViewController];
-        PFObject *category = [self.categoriesArray objectAtIndex:indexPath.row];
-        controller.selectedCategory = category.objectId;
+        controller.selectedCategoryObject = [self.pfObjectsArray objectAtIndex:indexPath.row];
     }
 }
 

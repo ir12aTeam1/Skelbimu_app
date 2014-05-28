@@ -24,6 +24,8 @@
 		A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */; };
 		A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3321E193661690046C7BA /* CustomTabBarViewController.m */; };
 		A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C33224193672790046C7BA /* BillBoardTableViewController.m */; };
+		A2C3322A193692040046C7BA /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C33229193692040046C7BA /* ItemTableViewCell.m */; };
+		A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3322C193692280046C7BA /* CategoryTableViewCell.m */; };
 		A2F6DB091935242300499B00 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6DB081935242300499B00 /* Client.m */; };
 		A2F6DB0B1935268300499B00 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB0A1935268300499B00 /* Parse.framework */; };
 		A2F6DB0D193526B200499B00 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB0C193526B200499B00 /* AudioToolbox.framework */; };
@@ -75,6 +77,10 @@
 		A2C33220193662920046C7BA /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		A2C33223193672790046C7BA /* BillBoardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BillBoardTableViewController.h; path = Controllers/BillBoardTableViewController.h; sourceTree = "<group>"; };
 		A2C33224193672790046C7BA /* BillBoardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BillBoardTableViewController.m; path = Controllers/BillBoardTableViewController.m; sourceTree = "<group>"; };
+		A2C33228193692040046C7BA /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemTableViewCell.h; path = Items/Cells/ItemTableViewCell.h; sourceTree = "<group>"; };
+		A2C33229193692040046C7BA /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemTableViewCell.m; path = Items/Cells/ItemTableViewCell.m; sourceTree = "<group>"; };
+		A2C3322B193692280046C7BA /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTableViewCell.h; path = Items/Cells/CategoryTableViewCell.h; sourceTree = "<group>"; };
+		A2C3322C193692280046C7BA /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTableViewCell.m; path = Items/Cells/CategoryTableViewCell.m; sourceTree = "<group>"; };
 		A2F6DB071935242300499B00 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = Client/Client.h; sourceTree = "<group>"; };
 		A2F6DB081935242300499B00 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Client.m; path = Client/Client.m; sourceTree = "<group>"; };
 		A2F6DB0A1935268300499B00 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			children = (
 				A2F6DB06193523EB00499B00 /* Client */,
 				A2F6DB051935234A00499B00 /* Controllers */,
+				A2C33226193691990046C7BA /* Items */,
 				A240D8CF1933DC4500D3F7AE /* Main.storyboard */,
 				A240D8D51933DC4500D3F7AE /* Images.xcassets */,
 				A240D8C41933DC4500D3F7AE /* Supporting Files */,
@@ -208,6 +215,25 @@
 				A240D8E51933DC4500D3F7AE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A2C33226193691990046C7BA /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				A2C33227193691AA0046C7BA /* Cells */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		A2C33227193691AA0046C7BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A2C3322B193692280046C7BA /* CategoryTableViewCell.h */,
+				A2C3322C193692280046C7BA /* CategoryTableViewCell.m */,
+				A2C33228193692040046C7BA /* ItemTableViewCell.h */,
+				A2C33229193692040046C7BA /* ItemTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		A2F6DB051935234A00499B00 /* Controllers */ = {
@@ -334,9 +360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C3322A193692040046C7BA /* ItemTableViewCell.m in Sources */,
 				A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */,
 				A240D8D41933DC4500D3F7AE /* ViewController.m in Sources */,
 				A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */,
+				A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */,
 				A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */,
 				A240D8CE1933DC4500D3F7AE /* AppDelegate.m in Sources */,
 				A2F6DB091935242300499B00 /* Client.m in Sources */,
