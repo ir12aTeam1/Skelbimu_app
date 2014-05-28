@@ -18,6 +18,7 @@
                   clientKey:@"TvwGLJ1s4ZQopQMvOMbGsZznQgtFLCCLZRNX99qT"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
+    [self setupGlobalPreloader];
     return YES;
 }
 							
@@ -32,6 +33,23 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
+
+#pragma mark - Global
+
+- (void)setupGlobalPreloader {
+    UIView *preloaderView = [[UIView alloc] initWithFrame:self.window.frame];
+    [preloaderView setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.7]];
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [activity setFrame:CGRectMake(preloaderView.center.x - (activity.frame.size.width / 2),
+                                  preloaderView.center.y - (activity.frame.size.height / 2),
+                                  activity.frame.size.width,
+                                  activity.frame.size.height)];
+    [activity startAnimating];
+    [preloaderView addSubview:activity];
+    preloaderView.tag = 12345;
+    preloaderView.hidden = YES;
+    [self.window addSubview:preloaderView];
 }
 
 @end

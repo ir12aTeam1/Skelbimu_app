@@ -23,4 +23,10 @@
 
 - (void)facebookLoginWithBlock:(PFUserResultBlock)block;
 
+#pragma mark - Global
+
+// Naudoti duomenu uzkrovimo/atnaujinimo atvejais
+- (void)showPreloader;
+- (void)hidePreloader;
+
 @end
