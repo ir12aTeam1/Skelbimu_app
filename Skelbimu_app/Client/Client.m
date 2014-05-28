@@ -26,10 +26,6 @@
     return !![PFUser currentUser];
 }
 
-- (PFUser*)currentUser {
-    return [PFUser currentUser];
-}
-
 #pragma mark - Facebook
 
 - (void)facebookLoginWithBlock:(PFUserResultBlock)block {
@@ -39,10 +35,6 @@
             block (user, error);
         }
     }];
-}
-
-- (void)logout {
-    [PFUser logOut];
 }
 
 @end

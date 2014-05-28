@@ -19,13 +19,8 @@
 
 - (BOOL)logedIn;
 
-// Galima naudoti ir tiesiai PFUser *user = [PFUser currentUser];
-- (PFUser*)currentUser;
-
 #pragma mark - Facebook
 
 - (void)facebookLoginWithBlock:(PFUserResultBlock)block;
-- (void)logout;
-
 
 @end

@@ -24,8 +24,8 @@
 }
 
 - (void)loginButtonPressed:(id)sender {
-    if ([PFUser currentUser]) {
-        [[Client get] logout];
+    if ([[Client get] logedIn]) {
+        [PFUser logOut];
         [self.loginButton setSelected:NO];
     } else {
         [self.preloader setHidden:NO];
@@ -37,7 +37,7 @@
             } else {
                 NSLog(@"User logged in through Facebook!");
             }
-            [self.loginButton setSelected:[PFUser currentUser]];
+            [self.loginButton setSelected:[[Client get] logedIn]];
             [self.preloader setHidden:YES];
         }];
     }
