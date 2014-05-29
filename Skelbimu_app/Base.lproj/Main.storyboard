@@ -188,34 +188,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.89582669005102045" green="0.89582669005102045" blue="0.89582669005102045" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Category" id="x2h-rY-JCt" customClass="CategoryTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Category" rowHeight="60" id="x2h-rY-JCt" customClass="CategoryTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2h-rY-JCt" id="1KP-WD-WGt">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9o5-le-eR7">
-                                            <rect key="frame" x="20" y="12" width="20" height="20"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9o5-le-eR7">
+                                            <rect key="frame" x="20" y="10" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78o-me-Lfg">
-                                            <rect key="frame" x="48" y="12" width="239" height="21"/>
+                                            <rect key="frame" x="75" y="10" width="212" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryImageView" destination="9o5-le-eR7" id="NLv-VA-pnT"/>
+                                    <outlet property="categoryImageView" destination="9o5-le-eR7" id="7o4-LU-clB"/>
                                     <outlet property="titleLabel" destination="78o-me-Lfg" id="7G6-ns-QPR"/>
                                     <segue destination="Fme-Bu-9yP" kind="push" identifier="drill_down" id="ccD-Rk-1w4"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Item" rowHeight="80" id="qwJ-K1-h2S" customClass="ItemTableViewCell">
-                                <rect key="frame" x="0.0" y="130" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="146" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qwJ-K1-h2S" id="W4p-D7-DFR">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="79"/>

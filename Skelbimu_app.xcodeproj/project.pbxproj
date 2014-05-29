@@ -38,6 +38,7 @@
 		A2F6DB1B193526FE00499B00 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB1A193526FE00499B00 /* StoreKit.framework */; };
 		A2F6DB1D1935270B00499B00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB1C1935270B00499B00 /* SystemConfiguration.framework */; };
 		A2F6DB1F193529AA00499B00 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB1E193529AA00499B00 /* FacebookSDK.framework */; };
+		A2FD5B3B1937A6A600C833C6 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD5B3A1937A6A600C833C6 /* UIImage+Tint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		A2F6DB1A193526FE00499B00 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A2F6DB1C1935270B00499B00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A2F6DB1E193529AA00499B00 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		A2FD5B391937A6A600C833C6 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Tint.h"; path = "Classes/Categories/UIImage+Tint.h"; sourceTree = "<group>"; };
+		A2FD5B3A1937A6A600C833C6 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Tint.m"; path = "Classes/Categories/UIImage+Tint.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,7 @@
 			children = (
 				A2F6DB06193523EB00499B00 /* Client */,
 				A2F6DB051935234A00499B00 /* Controllers */,
+				A2FD5B371937A67500C833C6 /* Classes */,
 				A2C33226193691990046C7BA /* Items */,
 				A240D8CF1933DC4500D3F7AE /* Main.storyboard */,
 				A240D8D51933DC4500D3F7AE /* Images.xcassets */,
@@ -258,6 +262,23 @@
 				A2F6DB081935242300499B00 /* Client.m */,
 			);
 			name = Client;
+			sourceTree = "<group>";
+		};
+		A2FD5B371937A67500C833C6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A2FD5B381937A68200C833C6 /* Categories */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A2FD5B381937A68200C833C6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A2FD5B391937A6A600C833C6 /* UIImage+Tint.h */,
+				A2FD5B3A1937A6A600C833C6 /* UIImage+Tint.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +383,7 @@
 			files = (
 				A2C3322A193692040046C7BA /* ItemTableViewCell.m in Sources */,
 				A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */,
+				A2FD5B3B1937A6A600C833C6 /* UIImage+Tint.m in Sources */,
 				A240D8D41933DC4500D3F7AE /* ViewController.m in Sources */,
 				A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */,
 				A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */,

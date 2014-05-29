@@ -9,6 +9,7 @@
 #import "BillBoardTableViewController.h"
 #import "CategoryTableViewCell.h"
 #import "ItemTableViewCell.h"
+#import "UIImage+Tint.h"
 
 @interface BillBoardTableViewController () {
     BOOL isItem;
@@ -82,7 +83,7 @@
     if (isItem) {
         return 80;
     } else {
-        return 44;
+        return 60;
     }
 }
 
@@ -99,6 +100,12 @@
     } else {
         CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier_cat forIndexPath:indexPath];
         cell.titleLabel.text = category[@"title"];
+        PFFile *iconFile = category[@"icon"];
+        [iconFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (data) {
+                cell.categoryImageView.image = [[UIImage imageWithData:data] imageWithTintColor:[UIColor lightGrayColor]];
+            }
+        }];
         return cell;
     }
 }
