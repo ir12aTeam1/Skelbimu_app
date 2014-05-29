@@ -12,3 +12,4 @@
 #define kSAFE_ORANGE_COLOR 0xF7861B
 
 #define CUSTOM_FONT_HELVETICA @"HelveticaNeue-Thin"
+#define CUSTOM_FONT_HELVETICA_LIGHT @"HelveticaNeue-Light"

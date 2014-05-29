@@ -15,6 +15,7 @@
     BOOL isItem;
 }
 @property (nonatomic, strong) NSMutableArray *pfObjectsArray;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @end
 
 @implementation BillBoardTableViewController
@@ -22,6 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.segmentedControl setTintColor:[UIColorFromRGB(kSAFE_ORANGE_COLOR) colorWithAlphaComponent:0.8]];
+    [self.segmentedControl setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                   [UIFont fontWithName:CUSTOM_FONT_HELVETICA_LIGHT size:18],
+                                                   NSFontAttributeName,
+                                                   nil]
+                                         forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -127,7 +134,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"drill_down"]) {

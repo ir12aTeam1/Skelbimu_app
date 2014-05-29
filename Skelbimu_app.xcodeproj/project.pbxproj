@@ -14,7 +14,6 @@
 		A240D8CA1933DC4500D3F7AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A240D8C91933DC4500D3F7AE /* main.m */; };
 		A240D8CE1933DC4500D3F7AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A240D8CD1933DC4500D3F7AE /* AppDelegate.m */; };
 		A240D8D11933DC4500D3F7AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240D8CF1933DC4500D3F7AE /* Main.storyboard */; };
-		A240D8D41933DC4500D3F7AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A240D8D31933DC4500D3F7AE /* ViewController.m */; };
 		A240D8D61933DC4500D3F7AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A240D8D51933DC4500D3F7AE /* Images.xcassets */; };
 		A240D8DD1933DC4500D3F7AE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A240D8DC1933DC4500D3F7AE /* XCTest.framework */; };
 		A240D8DE1933DC4500D3F7AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A240D8BD1933DC4500D3F7AE /* Foundation.framework */; };
@@ -64,8 +63,6 @@
 		A240D8CC1933DC4500D3F7AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A240D8CD1933DC4500D3F7AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A240D8D01933DC4500D3F7AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A240D8D21933DC4500D3F7AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A240D8D31933DC4500D3F7AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A240D8D51933DC4500D3F7AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A240D8DB1933DC4500D3F7AE /* Skelbimu_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Skelbimu_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A240D8DC1933DC4500D3F7AE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -246,8 +243,6 @@
 		A2F6DB051935234A00499B00 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A240D8D21933DC4500D3F7AE /* ViewController.h */,
-				A240D8D31933DC4500D3F7AE /* ViewController.m */,
 				A2FD5B3C1937B51900C833C6 /* AboutViewController.h */,
 				A2FD5B3D1937B51900C833C6 /* AboutViewController.m */,
 				A2C33223193672790046C7BA /* BillBoardTableViewController.h */,
@@ -389,7 +384,6 @@
 				A2C3322A193692040046C7BA /* ItemTableViewCell.m in Sources */,
 				A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */,
 				A2FD5B3B1937A6A600C833C6 /* UIImage+Tint.m in Sources */,
-				A240D8D41933DC4500D3F7AE /* ViewController.m in Sources */,
 				A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */,
 				A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */,
 				A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */,
