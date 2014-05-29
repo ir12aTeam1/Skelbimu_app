@@ -21,14 +21,13 @@
     [self setupGlobalPreloader];
     
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(kSAFE_ORANGE_COLOR)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                           [UIFont fontWithName:CUSTOM_FONT_HELVETICA size:24],
                                                           NSFontAttributeName,
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName,
-                                                          nil]];
-//    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(kSAFE_ORANGE_COLOR)];
-    
+                                                          nil]];    
     return YES;
 }
 							
