@@ -20,6 +20,10 @@
 		A240D8DF1933DC4500D3F7AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A240D8C11933DC4500D3F7AE /* UIKit.framework */; };
 		A240D8E71933DC4500D3F7AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A240D8E51933DC4500D3F7AE /* InfoPlist.strings */; };
 		A240D8E91933DC4500D3F7AE /* Skelbimu_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A240D8E81933DC4500D3F7AE /* Skelbimu_appTests.m */; };
+		A2410F901938F64600BDA427 /* UILabel+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F8F1938F64600BDA427 /* UILabel+Utils.m */; };
+		A2410F941938FB8300BDA427 /* ItemDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F931938FB8300BDA427 /* ItemDetailsTableViewController.m */; };
+		A2410F991939076C00BDA427 /* ACEExpandableTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F981939076C00BDA427 /* ACEExpandableTextCell.m */; };
+		A2410F9D1939080500BDA427 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F9C1939080500BDA427 /* SZTextView.m */; };
 		A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */; };
 		A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3321E193661690046C7BA /* CustomTabBarViewController.m */; };
 		A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C33224193672790046C7BA /* BillBoardTableViewController.m */; };
@@ -69,6 +73,14 @@
 		A240D8E41933DC4500D3F7AE /* Skelbimu_appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Skelbimu_appTests-Info.plist"; sourceTree = "<group>"; };
 		A240D8E61933DC4500D3F7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A240D8E81933DC4500D3F7AE /* Skelbimu_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Skelbimu_appTests.m; sourceTree = "<group>"; };
+		A2410F8E1938F64600BDA427 /* UILabel+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Utils.h"; path = "Classes/Categories/UILabel+Utils.h"; sourceTree = "<group>"; };
+		A2410F8F1938F64600BDA427 /* UILabel+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Utils.m"; path = "Classes/Categories/UILabel+Utils.m"; sourceTree = "<group>"; };
+		A2410F921938FB8300BDA427 /* ItemDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemDetailsTableViewController.h; path = Controllers/ItemDetailsTableViewController.h; sourceTree = "<group>"; };
+		A2410F931938FB8300BDA427 /* ItemDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemDetailsTableViewController.m; path = Controllers/ItemDetailsTableViewController.m; sourceTree = "<group>"; };
+		A2410F971939076C00BDA427 /* ACEExpandableTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACEExpandableTextCell.h; path = External/ACEExpandableTextCell/ACEExpandableTextCell.h; sourceTree = SOURCE_ROOT; };
+		A2410F981939076C00BDA427 /* ACEExpandableTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ACEExpandableTextCell.m; path = External/ACEExpandableTextCell/ACEExpandableTextCell.m; sourceTree = SOURCE_ROOT; };
+		A2410F9B1939080500BDA427 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SZTextView.h; path = External/SZTextView/SZTextView.h; sourceTree = SOURCE_ROOT; };
+		A2410F9C1939080500BDA427 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SZTextView.m; path = External/SZTextView/SZTextView.m; sourceTree = SOURCE_ROOT; };
 		A2C3321A1936591E0046C7BA /* ProfileSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileSettingsTableViewController.h; path = Controllers/ProfileSettingsTableViewController.h; sourceTree = "<group>"; };
 		A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileSettingsTableViewController.m; path = Controllers/ProfileSettingsTableViewController.m; sourceTree = "<group>"; };
 		A2C3321D193661690046C7BA /* CustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTabBarViewController.h; path = Controllers/CustomTabBarViewController.h; sourceTree = "<group>"; };
@@ -178,6 +190,7 @@
 		A240D8C31933DC4500D3F7AE /* Skelbimu_app */ = {
 			isa = PBXGroup;
 			children = (
+				A2410F951939075200BDA427 /* External */,
 				A2F6DB06193523EB00499B00 /* Client */,
 				A2F6DB051935234A00499B00 /* Controllers */,
 				A2FD5B371937A67500C833C6 /* Classes */,
@@ -221,6 +234,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A2410F911938FB5400BDA427 /* Billboard */ = {
+			isa = PBXGroup;
+			children = (
+				A2C33223193672790046C7BA /* BillBoardTableViewController.h */,
+				A2C33224193672790046C7BA /* BillBoardTableViewController.m */,
+				A2410F921938FB8300BDA427 /* ItemDetailsTableViewController.h */,
+				A2410F931938FB8300BDA427 /* ItemDetailsTableViewController.m */,
+			);
+			name = Billboard;
+			sourceTree = "<group>";
+		};
+		A2410F951939075200BDA427 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				A2410F961939075D00BDA427 /* ACEExpandableTextCell */,
+				A2410F9A193907CB00BDA427 /* SZTextView */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		A2410F961939075D00BDA427 /* ACEExpandableTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2410F971939076C00BDA427 /* ACEExpandableTextCell.h */,
+				A2410F981939076C00BDA427 /* ACEExpandableTextCell.m */,
+			);
+			name = ACEExpandableTextCell;
+			sourceTree = "<group>";
+		};
+		A2410F9A193907CB00BDA427 /* SZTextView */ = {
+			isa = PBXGroup;
+			children = (
+				A2410F9B1939080500BDA427 /* SZTextView.h */,
+				A2410F9C1939080500BDA427 /* SZTextView.m */,
+			);
+			name = SZTextView;
+			sourceTree = "<group>";
+		};
 		A2C33226193691990046C7BA /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,8 +296,7 @@
 			children = (
 				A2FD5B3C1937B51900C833C6 /* AboutViewController.h */,
 				A2FD5B3D1937B51900C833C6 /* AboutViewController.m */,
-				A2C33223193672790046C7BA /* BillBoardTableViewController.h */,
-				A2C33224193672790046C7BA /* BillBoardTableViewController.m */,
+				A2410F911938FB5400BDA427 /* Billboard */,
 				A2C3321A1936591E0046C7BA /* ProfileSettingsTableViewController.h */,
 				A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */,
 				A2C3321D193661690046C7BA /* CustomTabBarViewController.h */,
@@ -277,6 +327,8 @@
 			children = (
 				A2FD5B391937A6A600C833C6 /* UIImage+Tint.h */,
 				A2FD5B3A1937A6A600C833C6 /* UIImage+Tint.m */,
+				A2410F8E1938F64600BDA427 /* UILabel+Utils.h */,
+				A2410F8F1938F64600BDA427 /* UILabel+Utils.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -383,11 +435,15 @@
 			files = (
 				A2C3322A193692040046C7BA /* ItemTableViewCell.m in Sources */,
 				A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */,
+				A2410F941938FB8300BDA427 /* ItemDetailsTableViewController.m in Sources */,
 				A2FD5B3B1937A6A600C833C6 /* UIImage+Tint.m in Sources */,
+				A2410F9D1939080500BDA427 /* SZTextView.m in Sources */,
 				A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */,
 				A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */,
+				A2410F901938F64600BDA427 /* UILabel+Utils.m in Sources */,
 				A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */,
 				A240D8CE1933DC4500D3F7AE /* AppDelegate.m in Sources */,
+				A2410F991939076C00BDA427 /* ACEExpandableTextCell.m in Sources */,
 				A2FD5B3E1937B51900C833C6 /* AboutViewController.m in Sources */,
 				A2F6DB091935242300499B00 /* Client.m in Sources */,
 				A240D8CA1933DC4500D3F7AE /* main.m in Sources */,

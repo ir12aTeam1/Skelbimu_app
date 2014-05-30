@@ -7,9 +7,11 @@
 //
 
 #import "BillBoardTableViewController.h"
+#import "ItemDetailsTableViewController.h"
 #import "CategoryTableViewCell.h"
 #import "ItemTableViewCell.h"
 #import "UIImage+Tint.h"
+#import "UILabel+Utils.h"
 
 @interface BillBoardTableViewController () {
     BOOL isItem;
@@ -33,8 +35,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationItem setTitle:!!self.selectedCategoryObject ? [self.selectedCategoryObject objectForKey:@"title"] : @"Skelbimai"];
     [[Client get] showPreloader];
     [self getListOfCategories];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationItem setTitle:@""];
 }
 
 - (void)getListOfCategories {
@@ -88,7 +96,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (isItem) {
-        return 80;
+        return 100;
     } else {
         return 60;
     }
@@ -103,6 +111,16 @@
     if (isItem) {
         ItemTableViewCell *cell = (ItemTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier_item forIndexPath:indexPath];
         cell.titleLabel.text = category[@"title"];
+        cell.descriptionLabel.text = category[@"description"];
+        [cell.descriptionLabel fitHeight];
+        cell.cityLabel.text = category[@"city"];
+        cell.priceLabel.text = [NSString stringWithFormat:@"%@", category[@"price"]];
+        PFFile *iconFile = category[@"image"];
+        [iconFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (data) {
+                cell.itemImageView.image = [UIImage imageWithData:data];
+            }
+        }];
         return cell;
     } else {
         CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier_cat forIndexPath:indexPath];
@@ -136,10 +154,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if ([segue.identifier isEqualToString:@"drill_down"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BillBoardTableViewController *controller = [segue destinationViewController];
         controller.selectedCategoryObject = [self.pfObjectsArray objectAtIndex:indexPath.row];
+    }
+    if ([segue.identifier isEqualToString:@"item_details"]) {
+        ItemDetailsTableViewController *controller = [segue destinationViewController];
+        controller.selectedItemObject = [self.pfObjectsArray objectAtIndex:indexPath.row];
     }
 }
 

@@ -10,18 +10,17 @@
 
 @implementation ItemTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (void)awakeFromNib
 {
     // Initialization code
+    [self.containerView.layer setCornerRadius:3.0f];
+    [self.containerView.layer setShadowColor:[UIColor lightGrayColor].CGColor];
+    [self.containerView.layer setShadowOffset:CGSizeMake(1, 1)];
+    [self.containerView.layer setShadowOpacity:0.35];
+    [self.containerView.layer setShadowRadius:1];
+    
+    [self.itemImageView.layer setCornerRadius:3.0f];
+    [self.priceContainerView.layer setCornerRadius:3.0f];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
