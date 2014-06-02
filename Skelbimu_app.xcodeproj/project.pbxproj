@@ -380,9 +380,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ruslanas Kudriavcevas";
 				TargetAttributes = {
-					A240D8B91933DC4500D3F7AE = {
-						DevelopmentTeam = M565AQGN3N;
-					};
 					A240D8DA1933DC4500D3F7AE = {
 						TestTargetID = A240D8B91933DC4500D3F7AE;
 					};
