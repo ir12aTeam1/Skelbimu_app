@@ -55,6 +55,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ACEExpandableTextCell *cell = [tableView expandableTextCellWithId:@"Cell"];
     cell.text = self.selectedItemObject[@"description"];
+    cell.userInteractionEnabled = NO;
     return cell;
 }
 
