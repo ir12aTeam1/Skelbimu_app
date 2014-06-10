@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @end
 
+static NSNumber *selectedSegment;
+
 @implementation BillBoardTableViewController
 
 - (void)viewDidLoad
@@ -36,7 +38,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationItem setTitle:!!self.selectedCategoryObject ? [self.selectedCategoryObject objectForKey:@"title"] : @"Skelbimai"];
-    [[Client get] showPreloader];
+    [self.segmentedControl setSelectedSegmentIndex:[selectedSegment integerValue]];
     [self getListOfCategories];
 }
 
@@ -46,6 +48,7 @@
 }
 
 - (void)getListOfCategories {
+    [[Client get] showPreloader];
     [self.pfObjectsArray removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"Category"];
     [query whereKey:@"parent_category" equalTo:self.selectedCategoryObject ? self.selectedCategoryObject.objectId : @""];
@@ -58,11 +61,13 @@
                 isItem = NO;
                 self.pfObjectsArray = [objects mutableCopy];
                 [self.tableView reloadData];
+                [[Client get] hidePreloader];
             } else {
                 isItem = YES;
                 //Get items list
                 PFQuery *itemQuery = [PFQuery queryWithClassName:@"Item"];
                 [itemQuery whereKey:@"category" equalTo:self.selectedCategoryObject];
+                [itemQuery whereKey:@"sell" equalTo:[NSNumber numberWithBool:!self.segmentedControl.selectedSegmentIndex]];
                 [itemQuery orderByAscending:@"createdAt"];
                 [itemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                     if (!error) {
@@ -71,6 +76,7 @@
                     } else {
                         NSLog(@"Error: %@ %@", error, [error userInfo]);
                     }
+                    [[Client get] hidePreloader];
                 }];
             }
             
@@ -78,8 +84,14 @@
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        [[Client get] hidePreloader];
     }];
+}
+
+#pragma mark - Actions
+
+- (IBAction)segmentDidChanged:(UISegmentedControl*)sender {
+    selectedSegment = [NSNumber numberWithInteger:sender.selectedSegmentIndex];
+    [self getListOfCategories];
 }
 
 #pragma mark - Table view data source

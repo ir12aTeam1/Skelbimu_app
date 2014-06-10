@@ -24,6 +24,7 @@
 		A2410F941938FB8300BDA427 /* ItemDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F931938FB8300BDA427 /* ItemDetailsTableViewController.m */; };
 		A2410F991939076C00BDA427 /* ACEExpandableTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F981939076C00BDA427 /* ACEExpandableTextCell.m */; };
 		A2410F9D1939080500BDA427 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2410F9C1939080500BDA427 /* SZTextView.m */; };
+		A28A813C1947857100F8C0E1 /* AddItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28A813B1947857100F8C0E1 /* AddItemTableViewController.m */; };
 		A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */; };
 		A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3321E193661690046C7BA /* CustomTabBarViewController.m */; };
 		A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C33224193672790046C7BA /* BillBoardTableViewController.m */; };
@@ -81,6 +82,8 @@
 		A2410F981939076C00BDA427 /* ACEExpandableTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ACEExpandableTextCell.m; path = External/ACEExpandableTextCell/ACEExpandableTextCell.m; sourceTree = SOURCE_ROOT; };
 		A2410F9B1939080500BDA427 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SZTextView.h; path = External/SZTextView/SZTextView.h; sourceTree = SOURCE_ROOT; };
 		A2410F9C1939080500BDA427 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SZTextView.m; path = External/SZTextView/SZTextView.m; sourceTree = SOURCE_ROOT; };
+		A28A813A1947857100F8C0E1 /* AddItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemTableViewController.h; path = Controllers/AddItemTableViewController.h; sourceTree = "<group>"; };
+		A28A813B1947857100F8C0E1 /* AddItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemTableViewController.m; path = Controllers/AddItemTableViewController.m; sourceTree = "<group>"; };
 		A2C3321A1936591E0046C7BA /* ProfileSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileSettingsTableViewController.h; path = Controllers/ProfileSettingsTableViewController.h; sourceTree = "<group>"; };
 		A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileSettingsTableViewController.m; path = Controllers/ProfileSettingsTableViewController.m; sourceTree = "<group>"; };
 		A2C3321D193661690046C7BA /* CustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTabBarViewController.h; path = Controllers/CustomTabBarViewController.h; sourceTree = "<group>"; };
@@ -272,6 +275,15 @@
 			name = SZTextView;
 			sourceTree = "<group>";
 		};
+		A28A81391947855400F8C0E1 /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				A28A813A1947857100F8C0E1 /* AddItemTableViewController.h */,
+				A28A813B1947857100F8C0E1 /* AddItemTableViewController.m */,
+			);
+			name = AddItem;
+			sourceTree = "<group>";
+		};
 		A2C33226193691990046C7BA /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +309,7 @@
 				A2FD5B3C1937B51900C833C6 /* AboutViewController.h */,
 				A2FD5B3D1937B51900C833C6 /* AboutViewController.m */,
 				A2410F911938FB5400BDA427 /* Billboard */,
+				A28A81391947855400F8C0E1 /* AddItem */,
 				A2C3321A1936591E0046C7BA /* ProfileSettingsTableViewController.h */,
 				A2C3321B1936591E0046C7BA /* ProfileSettingsTableViewController.m */,
 				A2C3321D193661690046C7BA /* CustomTabBarViewController.h */,
@@ -380,6 +393,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ruslanas Kudriavcevas";
 				TargetAttributes = {
+					A240D8B91933DC4500D3F7AE = {
+						DevelopmentTeam = M565AQGN3N;
+					};
 					A240D8DA1933DC4500D3F7AE = {
 						TestTargetID = A240D8B91933DC4500D3F7AE;
 					};
@@ -439,6 +455,7 @@
 				A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */,
 				A2410F901938F64600BDA427 /* UILabel+Utils.m in Sources */,
 				A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */,
+				A28A813C1947857100F8C0E1 /* AddItemTableViewController.m in Sources */,
 				A240D8CE1933DC4500D3F7AE /* AppDelegate.m in Sources */,
 				A2410F991939076C00BDA427 /* ACEExpandableTextCell.m in Sources */,
 				A2FD5B3E1937B51900C833C6 /* AboutViewController.m in Sources */,
