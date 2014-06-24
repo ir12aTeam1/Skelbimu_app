@@ -47,22 +47,25 @@
     if (_textView == nil) {
         CGRect cellFrame = self.contentView.bounds;
         cellFrame.origin.y += kPadding;
+        cellFrame.origin.x += 20;
         cellFrame.size.height -= kPadding;
-        cellFrame.origin.x = 10;
-        cellFrame.size.width = 300;
+        cellFrame.size.width -= 20;
         
         _textView = [[SZTextView alloc] initWithFrame:cellFrame];
         _textView.delegate = self;
         
         _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _textView.backgroundColor = [UIColor clearColor];
-        _textView.font = [UIFont fontWithName:CUSTOM_FONT_HELVETICA size:18.0f];
-        _textView.textColor = [UIColor darkGrayColor];
+        _textView.font = [UIFont fontWithName:CUSTOM_FONT_HELVETICA size:14];
         
         _textView.scrollEnabled = NO;
         _textView.showsVerticalScrollIndicator = NO;
         _textView.showsHorizontalScrollIndicator = NO;
         // textView.contentInset = UIEdgeInsetsZero;
+        
+        _textView.returnKeyType = UIReturnKeyDone;
+        
+        [self.contentView addSubview:_textView];
     }
     return _textView;
 }
@@ -73,7 +76,6 @@
     
     // update the UI
     self.textView.text = text;
-    [self textViewDidChange:self.textView];
 }
 
 - (CGFloat)cellHeight
@@ -123,6 +125,15 @@
             [self.expandableTableView beginUpdates];
             [self.expandableTableView endUpdates];
         }
+    }
+}
+
+- (BOOL) textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if([text isEqualToString:@"\n"]){
+        [textView resignFirstResponder];
+        return NO;
+    }else{
+        return YES;
     }
 }
 

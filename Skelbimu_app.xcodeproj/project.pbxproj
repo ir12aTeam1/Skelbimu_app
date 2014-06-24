@@ -30,6 +30,15 @@
 		A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C33224193672790046C7BA /* BillBoardTableViewController.m */; };
 		A2C3322A193692040046C7BA /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C33229193692040046C7BA /* ItemTableViewCell.m */; };
 		A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C3322C193692280046C7BA /* CategoryTableViewCell.m */; };
+		A2D6BD571958358900E0A370 /* CreateItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD561958358900E0A370 /* CreateItemTableViewCell.m */; };
+		A2D6BD5A195835E700E0A370 /* AddItemDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD59195835E700E0A370 /* AddItemDetailsTableViewController.m */; };
+		A2D6BD5E19583CB600E0A370 /* RKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD5D19583CB600E0A370 /* RKButton.m */; };
+		A2D6BD6A1958A19100E0A370 /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD611958A19100E0A370 /* PECropRectView.m */; };
+		A2D6BD6B1958A19100E0A370 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD631958A19100E0A370 /* PECropView.m */; };
+		A2D6BD6C1958A19100E0A370 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD651958A19100E0A370 /* PECropViewController.m */; };
+		A2D6BD6D1958A19100E0A370 /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD671958A19100E0A370 /* PEResizeControl.m */; };
+		A2D6BD6E1958A19100E0A370 /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD691958A19100E0A370 /* UIImage+PECrop.m */; };
+		A2D6BD711958A5CA00E0A370 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D6BD701958A5CA00E0A370 /* UIImage+Resize.m */; };
 		A2F6DB091935242300499B00 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6DB081935242300499B00 /* Client.m */; };
 		A2F6DB0B1935268300499B00 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB0A1935268300499B00 /* Parse.framework */; };
 		A2F6DB0D193526B200499B00 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F6DB0C193526B200499B00 /* AudioToolbox.framework */; };
@@ -95,6 +104,24 @@
 		A2C33229193692040046C7BA /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemTableViewCell.m; path = Items/Cells/ItemTableViewCell.m; sourceTree = "<group>"; };
 		A2C3322B193692280046C7BA /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTableViewCell.h; path = Items/Cells/CategoryTableViewCell.h; sourceTree = "<group>"; };
 		A2C3322C193692280046C7BA /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTableViewCell.m; path = Items/Cells/CategoryTableViewCell.m; sourceTree = "<group>"; };
+		A2D6BD551958358900E0A370 /* CreateItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateItemTableViewCell.h; path = Items/Cells/CreateItemTableViewCell.h; sourceTree = "<group>"; };
+		A2D6BD561958358900E0A370 /* CreateItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateItemTableViewCell.m; path = Items/Cells/CreateItemTableViewCell.m; sourceTree = "<group>"; };
+		A2D6BD58195835E700E0A370 /* AddItemDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemDetailsTableViewController.h; path = Controllers/AddItemDetailsTableViewController.h; sourceTree = "<group>"; };
+		A2D6BD59195835E700E0A370 /* AddItemDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemDetailsTableViewController.m; path = Controllers/AddItemDetailsTableViewController.m; sourceTree = "<group>"; };
+		A2D6BD5C19583CB600E0A370 /* RKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKButton.h; path = Classes/Subclasses/RKButton.h; sourceTree = "<group>"; };
+		A2D6BD5D19583CB600E0A370 /* RKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKButton.m; path = Classes/Subclasses/RKButton.m; sourceTree = "<group>"; };
+		A2D6BD601958A19100E0A370 /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PECropRectView.h; path = External/PECropRect/PECropRectView.h; sourceTree = SOURCE_ROOT; };
+		A2D6BD611958A19100E0A370 /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PECropRectView.m; path = External/PECropRect/PECropRectView.m; sourceTree = SOURCE_ROOT; };
+		A2D6BD621958A19100E0A370 /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PECropView.h; path = External/PECropRect/PECropView.h; sourceTree = SOURCE_ROOT; };
+		A2D6BD631958A19100E0A370 /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PECropView.m; path = External/PECropRect/PECropView.m; sourceTree = SOURCE_ROOT; };
+		A2D6BD641958A19100E0A370 /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PECropViewController.h; path = External/PECropRect/PECropViewController.h; sourceTree = SOURCE_ROOT; };
+		A2D6BD651958A19100E0A370 /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PECropViewController.m; path = External/PECropRect/PECropViewController.m; sourceTree = SOURCE_ROOT; };
+		A2D6BD661958A19100E0A370 /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PEResizeControl.h; path = External/PECropRect/PEResizeControl.h; sourceTree = SOURCE_ROOT; };
+		A2D6BD671958A19100E0A370 /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PEResizeControl.m; path = External/PECropRect/PEResizeControl.m; sourceTree = SOURCE_ROOT; };
+		A2D6BD681958A19100E0A370 /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PECrop.h"; path = "External/PECropRect/UIImage+PECrop.h"; sourceTree = SOURCE_ROOT; };
+		A2D6BD691958A19100E0A370 /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PECrop.m"; path = "External/PECropRect/UIImage+PECrop.m"; sourceTree = SOURCE_ROOT; };
+		A2D6BD6F1958A5CA00E0A370 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "Classes/Categories/UIImage+Resize.h"; sourceTree = "<group>"; };
+		A2D6BD701958A5CA00E0A370 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "Classes/Categories/UIImage+Resize.m"; sourceTree = "<group>"; };
 		A2F6DB071935242300499B00 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = Client/Client.h; sourceTree = "<group>"; };
 		A2F6DB081935242300499B00 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Client.m; path = Client/Client.m; sourceTree = "<group>"; };
 		A2F6DB0A1935268300499B00 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -251,6 +278,7 @@
 		A2410F951939075200BDA427 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A2D6BD5F1958A18300E0A370 /* PECropRect */,
 				A2410F961939075D00BDA427 /* ACEExpandableTextCell */,
 				A2410F9A193907CB00BDA427 /* SZTextView */,
 			);
@@ -280,6 +308,8 @@
 			children = (
 				A28A813A1947857100F8C0E1 /* AddItemTableViewController.h */,
 				A28A813B1947857100F8C0E1 /* AddItemTableViewController.m */,
+				A2D6BD58195835E700E0A370 /* AddItemDetailsTableViewController.h */,
+				A2D6BD59195835E700E0A370 /* AddItemDetailsTableViewController.m */,
 			);
 			name = AddItem;
 			sourceTree = "<group>";
@@ -299,8 +329,36 @@
 				A2C3322C193692280046C7BA /* CategoryTableViewCell.m */,
 				A2C33228193692040046C7BA /* ItemTableViewCell.h */,
 				A2C33229193692040046C7BA /* ItemTableViewCell.m */,
+				A2D6BD551958358900E0A370 /* CreateItemTableViewCell.h */,
+				A2D6BD561958358900E0A370 /* CreateItemTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		A2D6BD5B19583C7200E0A370 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				A2D6BD5C19583CB600E0A370 /* RKButton.h */,
+				A2D6BD5D19583CB600E0A370 /* RKButton.m */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		A2D6BD5F1958A18300E0A370 /* PECropRect */ = {
+			isa = PBXGroup;
+			children = (
+				A2D6BD601958A19100E0A370 /* PECropRectView.h */,
+				A2D6BD611958A19100E0A370 /* PECropRectView.m */,
+				A2D6BD621958A19100E0A370 /* PECropView.h */,
+				A2D6BD631958A19100E0A370 /* PECropView.m */,
+				A2D6BD641958A19100E0A370 /* PECropViewController.h */,
+				A2D6BD651958A19100E0A370 /* PECropViewController.m */,
+				A2D6BD661958A19100E0A370 /* PEResizeControl.h */,
+				A2D6BD671958A19100E0A370 /* PEResizeControl.m */,
+				A2D6BD681958A19100E0A370 /* UIImage+PECrop.h */,
+				A2D6BD691958A19100E0A370 /* UIImage+PECrop.m */,
+			);
+			name = PECropRect;
 			sourceTree = "<group>";
 		};
 		A2F6DB051935234A00499B00 /* Controllers */ = {
@@ -331,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				A2FD5B381937A68200C833C6 /* Categories */,
+				A2D6BD5B19583C7200E0A370 /* Subclasses */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -342,6 +401,8 @@
 				A2FD5B3A1937A6A600C833C6 /* UIImage+Tint.m */,
 				A2410F8E1938F64600BDA427 /* UILabel+Utils.h */,
 				A2410F8F1938F64600BDA427 /* UILabel+Utils.m */,
+				A2D6BD6F1958A5CA00E0A370 /* UIImage+Resize.h */,
+				A2D6BD701958A5CA00E0A370 /* UIImage+Resize.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -450,12 +511,21 @@
 				A2C33225193672790046C7BA /* BillBoardTableViewController.m in Sources */,
 				A2410F941938FB8300BDA427 /* ItemDetailsTableViewController.m in Sources */,
 				A2FD5B3B1937A6A600C833C6 /* UIImage+Tint.m in Sources */,
+				A2D6BD6D1958A19100E0A370 /* PEResizeControl.m in Sources */,
+				A2D6BD6E1958A19100E0A370 /* UIImage+PECrop.m in Sources */,
 				A2410F9D1939080500BDA427 /* SZTextView.m in Sources */,
 				A2C3321F193661690046C7BA /* CustomTabBarViewController.m in Sources */,
 				A2C3322D193692280046C7BA /* CategoryTableViewCell.m in Sources */,
+				A2D6BD6B1958A19100E0A370 /* PECropView.m in Sources */,
 				A2410F901938F64600BDA427 /* UILabel+Utils.m in Sources */,
+				A2D6BD6C1958A19100E0A370 /* PECropViewController.m in Sources */,
+				A2D6BD5A195835E700E0A370 /* AddItemDetailsTableViewController.m in Sources */,
 				A2C3321C1936591E0046C7BA /* ProfileSettingsTableViewController.m in Sources */,
+				A2D6BD6A1958A19100E0A370 /* PECropRectView.m in Sources */,
+				A2D6BD5E19583CB600E0A370 /* RKButton.m in Sources */,
 				A28A813C1947857100F8C0E1 /* AddItemTableViewController.m in Sources */,
+				A2D6BD711958A5CA00E0A370 /* UIImage+Resize.m in Sources */,
+				A2D6BD571958358900E0A370 /* CreateItemTableViewCell.m in Sources */,
 				A240D8CE1933DC4500D3F7AE /* AppDelegate.m in Sources */,
 				A2410F991939076C00BDA427 /* ACEExpandableTextCell.m in Sources */,
 				A2FD5B3E1937B51900C833C6 /* AboutViewController.m in Sources */,
