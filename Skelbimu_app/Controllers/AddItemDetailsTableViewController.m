@@ -111,6 +111,29 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     NSData *imageData = UIImageJPEGRepresentation(self.itemImageView.image, 0.25);
+    PFFile *imageFile = [PFFile fileWithName:@"image.jpg" data:imageData];
+    //We can create HUD here
+    
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            PFUser *user = [PFUser currentUser];
+            PFObject *newItem = [PFObject objectWithClassName:@"Item"];
+            [newItem setObject:imageFile forKey:@"image"];
+            [newItem setObject:user forKey:@"user"];
+            //TODO: Prideti likusius laukus
+            
+            [newItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    //Success, close controller and refresh something
+                } else {
+                    NSLog(@"Error save item: %@ %@", error, [error userInfo]);
+                }
+            }];
+            
+        } else {
+            NSLog(@"Error upload image: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 #pragma mark - ActionSheet Delegate
