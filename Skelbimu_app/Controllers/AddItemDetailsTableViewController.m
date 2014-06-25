@@ -110,7 +110,7 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
-    
+    NSData *imageData = UIImageJPEGRepresentation(self.itemImageView.image, 0.25);
 }
 
 #pragma mark - ActionSheet Delegate
