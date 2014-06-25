@@ -133,6 +133,8 @@
         } else {
             NSLog(@"Error upload image: %@ %@", error, [error userInfo]);
         }
+    } progressBlock:^(int percentDone) {
+        //Cia galima atnaujinti progresa HUD'ui
     }];
 }
 
