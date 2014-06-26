@@ -8,10 +8,12 @@
 
 #import "ProfileSettingsTableViewController.h"
 
-@interface ProfileSettingsTableViewController ()
+@interface ProfileSettingsTableViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *facebookLoginButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *preloader;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @end
 
 @implementation ProfileSettingsTableViewController
@@ -28,7 +30,14 @@
 }
 
 - (void)reloadView {
-    self.userNameLabel.text = [[Client get] logedIn] ? [[PFUser currentUser] username] : @"Neprisijungęs vartotojas";
+    PFUser *user = [PFUser currentUser];
+    if ([[Client get] logedIn]) {
+        self.userNameLabel.text = user.username;
+        self.phoneNumberTextField.text = user[@"phone"];
+    } else {
+        self.userNameLabel.text = @"Neprisijungęs vartotojas";
+        self.phoneNumberTextField.text = @"";
+    }
 }
 
 - (IBAction)facebookLoginButtonPressed:(id)sender {
@@ -36,6 +45,7 @@
         [PFUser logOut];
         [self.facebookLoginButton setSelected:NO];
         [self reloadView];
+        [self.tableView beginUpdates], [self.tableView endUpdates];
     } else {
         [self.preloader setHidden:NO];
         [[Client get] facebookLoginWithBlock:^(PFUser *user, NSError *error) {
@@ -49,8 +59,38 @@
             [self.facebookLoginButton setSelected:[[Client get] logedIn]];
             [self.preloader setHidden:YES];
             [self reloadView];
+            [self.tableView beginUpdates], [self.tableView endUpdates];
         }];
     }
+}
+
+- (IBAction)saveAdditionalsButtonPressed:(id)sender {
+    [[Client get] showPreloader];
+    PFUser *user = [PFUser currentUser];
+    [user setObject:[NSNumber numberWithBool:self.checkButton.selected] forKey:@"show_phone"];
+    [user setObject:self.phoneNumberTextField.text forKey:@"phone"];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [[Client get] hidePreloader];
+        [[Client get] showSimpleAlert:@"Duomenys išsaugoti"];
+    }];
+}
+
+- (IBAction)checkButtonPressed:(UIButton *)sender {
+    [self.view endEditing:YES];
+    sender.selected = !sender.selected;
+}
+
+#pragma mark - TableView Datasource
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[Client get] logedIn] ? 200 : 0;
+}
+
+#pragma mark - TextField Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.view endEditing:YES];
+    return YES;
 }
 
 

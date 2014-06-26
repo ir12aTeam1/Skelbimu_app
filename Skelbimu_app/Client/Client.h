@@ -23,6 +23,10 @@
 
 - (void)facebookLoginWithBlock:(PFUserResultBlock)block;
 
+#pragma mark - Alert
+
+- (void)showSimpleAlert:(NSString*)message;
+
 #pragma mark - Global
 
 // Naudoti duomenu uzkrovimo/atnaujinimo atvejais

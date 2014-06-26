@@ -36,7 +36,6 @@
             [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
                     NSDictionary *userData = (NSDictionary *)result;
-                    NSLog(@"USERDATA: %@", userData);
                     [[PFUser currentUser] setUsername:userData[@"name"]];
                     [[PFUser currentUser] setEmail:userData[@"email"]];
                     [[PFUser currentUser] saveEventually];
@@ -47,6 +46,17 @@
             }];
         }
     }];
+}
+
+#pragma mark - Alert
+
+- (void)showSimpleAlert:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Dėmesio!"
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 #pragma mark - Global

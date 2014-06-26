@@ -12,7 +12,10 @@
 #import "PECropViewController.h"
 #import "UIImage+Resize.h"
 
-@interface AddItemDetailsTableViewController () <ACEExpandableTableViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PECropViewControllerDelegate> {
+#warning Progres HUD gal?
+#warning Prideti useriui telefono lauka ir jei nesuvedes registracijos metu, duot ivest
+
+@interface AddItemDetailsTableViewController () <ACEExpandableTableViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PECropViewControllerDelegate, UITextFieldDelegate> {
     CGFloat _cellHeight[1];
 }
 @property (weak, nonatomic) IBOutlet ACEExpandableTextCell *expandableDescriptionCell;
@@ -20,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *CityTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @end
 
@@ -28,6 +32,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.categoryTitle.text = [self.selectedCategoryObject objectForKey:@"title"];
     self.expandableDescriptionCell.expandableTableView = self.tableView;
     self.expandableDescriptionCell.textView.placeholder = @"Įveskite aprašymą..";
     _cellHeight[0] = self.expandableDescriptionCell.cellHeight;
@@ -110,6 +115,11 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
+    if (![PFUser currentUser]) {
+        [[Client get] showSimpleAlert:@"Prašome prisijungti!"];
+        return;
+    }
+    [[Client get] showPreloader];
     NSData *imageData = UIImageJPEGRepresentation(self.itemImageView.image, 0.25);
     PFFile *imageFile = [PFFile fileWithName:@"image.jpg" data:imageData];
     //We can create HUD here
@@ -120,17 +130,27 @@
             PFObject *newItem = [PFObject objectWithClassName:@"Item"];
             [newItem setObject:imageFile forKey:@"image"];
             [newItem setObject:user forKey:@"user"];
-            //TODO: Prideti likusius laukus
+            [newItem setObject:self.selectedCategoryObject forKey:@"category"];
+            BOOL sell = (self.selectedButton.rkSelection == RK_PROPOSE);
+            [newItem setObject:[NSNumber numberWithBool:sell] forKey:@"sell"];
+            [newItem setObject:self.titleTextField.text forKey:@"title"];
+            [newItem setObject:self.expandableDescriptionCell.text forKey:@"description"];
+            [newItem setObject:[NSNumber numberWithInt:[self.priceTextField.text intValue]] forKey:@"price"];
+            [newItem setObject:self.CityTextField.text forKey:@"city"];
             
             [newItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [[Client get] hidePreloader];
                 if (!error) {
                     //Success, close controller and refresh something
+                    [self.navigationController popViewControllerAnimated:YES];
+                    [[Client get] showSimpleAlert:@"Jūsų skelbimas įkeltas"];
                 } else {
                     NSLog(@"Error save item: %@ %@", error, [error userInfo]);
                 }
             }];
             
         } else {
+            [[Client get] hidePreloader];
             NSLog(@"Error upload image: %@ %@", error, [error userInfo]);
         }
     } progressBlock:^(int percentDone) {
@@ -180,13 +200,31 @@
             tempImage = croppedImage;
         }
         self.itemImageView.image = tempImage;
-//        [RequestUpload post:self image:self.profileImageView.image];
     }];
 }
 
 - (void)cropViewControllerDidCancel:(PECropViewController *)controller
 {
     [controller dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.titleTextField) {
+        [self.priceTextField becomeFirstResponder];
+        return NO;
+    }
+    if (textField == self.priceTextField) {
+        [self.CityTextField becomeFirstResponder];
+        return NO;
+    }
+    if (textField == self.CityTextField) {
+        [self.phoneNumberTextField becomeFirstResponder];
+        return NO;
+    }
+    if (textField == self.phoneNumberTextField) {
+        [self.phoneNumberTextField resignFirstResponder];
+    }
+    return YES;
 }
 
 @end
